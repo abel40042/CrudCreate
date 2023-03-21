@@ -24,52 +24,56 @@
         </div>
         <BtnPlus class="btnPlusInfo"/>
         <div class="submit">
-            <BtnSubmit type="submit" textContaintSubmit="Add user info"/>
+            <BtnSubmit textContaintSubmit="Add user info"/>
         </div>
         </form>
 
     </div>
 </template>
-<script>
-import BtnPlus from "../components/Common/btn+.vue"
-import BtnSubmit from "../components/Common/BtnSubmit.vue";
 
-    export default{
-        name : "InputRequest",
-        components :{
-            BtnPlus,
-            BtnSubmit,
+  
+  <script>
+  import BtnPlus from "../components/Common/btn+.vue"
+  import BtnSubmit from "../components/Common/BtnSubmit.vue";
+  import jsonData from '../dataBase/dataBase.json'
+  
+  export default {
+    name: "InputRequest",
+    components: {
+      BtnPlus,
+      BtnSubmit,
+    },
+    data() {
+      return {
+        form: {
+          firstname: '',
+          lastname: '',
+          email: '',
+          role: '',
+          expTitle: '',
+          expDesc: '',
+          expDate: '',
         },
-        data() {
-            return {
-                form: {
-                    firstname: '',
-                    lastname: '',
-                    email: '',
-                    role: '',
-                    expTitle: '',
-                    expDesc: '',
-                    expDate: '',
-                },
-            }
-        },
-        methods: {
-            submitForm() {
-                const formData = JSON.stringify(this.form);
-                console.log(formData)
-            },
-            async fetchData() {
-            const response = await fetch('http://localhost:3000/users');
-            const jsonData = await response.json();
-            this.data = jsonData
-        }
-        },
-        mounted() {
-            this.fetchData();
+        data: jsonData
+      }
+    },
+    methods: {
+      async submitForm() {
+        const formData = JSON.stringify(this.form);
+        console.log(formData);
       },
-
-    }
-</script>
+      async fetchData() {
+        const response = await fetch('http://localhost:3000/users');
+        const jsonData = await response.json();
+        this.data = jsonData;
+      }
+    },
+    mounted() {
+      this.fetchData();
+    },
+  }
+  </script>
+  
 <style lang="scss" scoped>
     #skills{
         width: 286px;

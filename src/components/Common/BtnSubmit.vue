@@ -15,7 +15,7 @@ export default {
 
 <template>
   <div class="btn">
-    <a href="/">{{ textContaintSubmit }}</a>
+    <button type="submit">{{ textContaintSubmit }}</button>
   </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
   font-size: 30px;
   transition: 0.3s all;
   cursor: pointer;
-  a{
+  button{
       background-color: #2444B5;
       padding: 15px 30px;
       color: white;
