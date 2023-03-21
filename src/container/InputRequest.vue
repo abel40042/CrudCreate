@@ -1,12 +1,13 @@
 <template>
     <div class="inputBar">
         <h3>User info</h3>
-        <div class="inputCase">
-            <input id="input" type="text" placeholder="Firstname">
-            <input id="input" type="text" placeholder="Lastname">
-            <input id="input" type="email" placeholder="Email">
-            <input id="input" type="text" placeholder="Age">
-            <input id="input" type="text" placeholder="Role">
+        <form @submit.prevent="submitForm">
+            <div class="inputCase">
+            <input id="name" type="text" placeholder="Firstname" v-model="form.firstname">
+            <input id="input" type="text" placeholder="Lastname" v-model="form.lastname">
+            <input id="input" type="email" placeholder="Email" v-model="form.email">
+            <input id="input" type="text" placeholder="Age" v-model="form.age">
+            <input id="input" type="text" placeholder="Role" v-model="form.role">
         <div class="selectionSkills">
             <BtnPlus class="btnPlus"/>
             <select name="language" id="skills" placeholder="Skills">
@@ -17,14 +18,15 @@
                 <option value="c++">C++</option>
             </select>   
         </div>
-            <input id="input" type="text" placeholder="Experiences Title">
-            <input type="text" id="expDescr" placeholder="Experiences Description">
-            <input id="input" type="text" placeholder="Experiences Date">
+            <input id="input" type="text" placeholder="Experiences Title" v-model="form.expTitle">
+            <input type="text" id="expDescr" placeholder="Experiences Description" v-model="form.expDesc">
+            <input id="input" type="text" placeholder="Experiences Date" v-model="form.expDate">
         </div>
         <BtnPlus class="btnPlusInfo"/>
         <div class="submit">
-            <BtnSubmit textContaintSubmit="Add user info"/>
+            <BtnSubmit type="submit" textContaintSubmit="Add user info"/>
         </div>
+        </form>
 
     </div>
 </template>
@@ -38,6 +40,33 @@ import BtnSubmit from "../components/Common/BtnSubmit.vue";
             BtnPlus,
             BtnSubmit,
         },
+        data() {
+            return {
+                form: {
+                    firstname: '',
+                    lastname: '',
+                    email: '',
+                    role: '',
+                    expTitle: '',
+                    expDesc: '',
+                    expDate: '',
+                },
+            }
+        },
+        methods: {
+            submitForm() {
+                const formData = JSON.stringify(this.form);
+                console.log(formData)
+            },
+            async fetchData() {
+            const response = await fetch('http://localhost:3000/users');
+            const jsonData = await response.json();
+            this.data = jsonData
+        }
+        },
+        mounted() {
+            this.fetchData();
+      },
 
     }
 </script>
@@ -94,7 +123,7 @@ import BtnSubmit from "../components/Common/BtnSubmit.vue";
             margin-block: 45px;
         }
     }
-    #input{
+    input{
             width: 286px;
             height: 35px;
             margin-block: 15px;

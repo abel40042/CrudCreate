@@ -5,14 +5,14 @@
       <UserView />
     </div>
     <InfoUpdate/>
+    <p>{{ data.name }}</p>
+    <p>{{ data.email }}</p>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
-// const app = Vue.createApp(...)
-// app.use(VueAxios, axios)
 
+import jsonData from './dataBase/dataBase.json'
 import InfoUpdate from './container/InfoUpdate.vue';
 import InputRequest from './container/InputRequest.vue';
 import UserView from './container/UserView.vue'
@@ -25,9 +25,10 @@ export default {
 },
 data() {
     return {
-      dataHomeArticle: [],
+      data: jsonData
     };
   },
+
   
 }
 </script>
