@@ -1,23 +1,61 @@
 {
-    "users":[
-        {
-        "id":0,
-        "name":"Randria",
-        "age": 22,
-        "fonction": "front-End"
-        },
-        {
-            "id":1,
-            "name":"PersoTest",
-            "age": 22,
-            "fonction": "DevOps"
-            },
-            {
-                "id":2,
-                "name":"Avatr_Local",
-                "age": 22,
-                "fonction": "back-end"
-                }
-        
-    ]
-  }
+  "users": [
+    {
+      "id": 0,
+      "firstname": "Randria",
+      "lastname": "fanampiny",
+      "email": "test@test.test",
+      "age": 22,
+      "role": "back-end",
+      "skills": [
+        "html",
+        "js"
+      ],
+      "expTitle": "",
+      "expDesc": "",
+      "expDate": ""
+    },
+    {
+      "id": 1,
+      "firstname": "Randria",
+      "lastname": "fanampiny",
+      "email": "test@test.test",
+      "age": 22,
+      "role": "back-end",
+      "skills": [
+        "html",
+        "js"
+      ],
+      "expTitle": "",
+      "expDesc": "",
+      "expDate": ""
+    },
+    {
+      "id": 2,
+      "firstname": "Randria",
+      "lastname": "fanampiny",
+      "email": "test@test.test",
+      "age": 22,
+      "role": "back-end",
+      "skills": [
+        "html",
+        "js"
+      ],
+      "expTitle": "",
+      "expDesc": "",
+      "expDate": ""
+    },
+    {
+      "firstname": "dada",
+      "lastname": "neny",
+      "email": "2@gmail.Com",
+      "role": "coding",
+      "skills": "",
+      "expTitle": "",
+      "expDesc": "",
+      "expDate": "",
+      "age": "24",
+      "id": 3
+    }
+  ]
+}

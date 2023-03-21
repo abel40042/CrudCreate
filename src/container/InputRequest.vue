@@ -10,7 +10,7 @@
             <input id="input" type="text" placeholder="Role" v-model="form.role">
         <div class="selectionSkills">
             <BtnPlus class="btnPlus"/>
-            <select name="language" id="skills" placeholder="Skills">
+            <select name="language" id="skills" placeholder="Skills" v-model="skills">
                 <option value="html">HTML</option>
                 <option value="css">CSS</option>
                 <option value="js">JS</option>
@@ -50,6 +50,7 @@
           lastname: '',
           email: '',
           role: '',
+          skills: '',
           expTitle: '',
           expDesc: '',
           expDate: '',
@@ -60,12 +61,23 @@
     methods: {
       async submitForm() {
         const formData = JSON.stringify(this.form);
+        await this.postData(formData)
         console.log(formData);
       },
       async fetchData() {
         const response = await fetch('http://localhost:3000/users');
         const jsonData = await response.json();
         this.data = jsonData;
+      },
+      async postData(data) {
+        const postResponse = await fetch('http://localhost:3000/users',{
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: data
+        })
+        console.log(postResponse)
       }
     },
     mounted() {
