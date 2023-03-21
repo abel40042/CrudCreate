@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <InputRequest/>
-    <p>{{ data.name }}</p>
-    <p>{{ data.email }}</p>
-  </div>
+    <UserView/>
+</div>
 </template>
 
 <script>
 import jsonData from './dataBase/dataBase.json'
 import InputRequest from './container/InputRequest.vue';
+import UserView from './container/UserView.vue';
 export default {
   name: 'App',
   components: {
     InputRequest,
+    UserView,
 },
 data() {
     return {

@@ -50,7 +50,7 @@
           lastname: '',
           email: '',
           role: '',
-          skills: '',
+          skills: [],
           expTitle: '',
           expDesc: '',
           expDate: '',

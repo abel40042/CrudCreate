@@ -1,75 +1,28 @@
 <template>
-    <div class="userList">
-      <CardUser/>
+    <div class="userList" v-for="dt, id in datas" :key="id">
+      {{ dt.firstname }}
 
     </div>
 </template>
 <script>
-import CardUser from '../components/Common/Card.vue'
-
-export default {
+// import CardUser from '../components/Common/Card.vue'
+  export default {
   name: "UserView",
-  components:{
-    CardUser,
-  },
   data() {
     return {
-      dataCardArticle: [],
+      datas: []
     };
   },
-  mounted() {
-    this.getCardData();
-  },
   methods: {
-    async getCardData() {
-      try {
-        await this.simulateRequest();
-        this.dataCardArticle = [
-          {
-            firstname: "Anarana",
-            lastname: "Feno",
-            email: "anarana@test.com",
-            age: 42,
-            role: "Back-end",
-            skills: [],
-            image:'url',
-            author: {
-              firstname: "olona",
-              lastname: "VElona",
-            },
-            
-          },
-          {
-            firstname: "Anarana",
-            lastname: "TsyAmpy",
-            email: "tsyampy@test.com",
-            age: 35,
-            role: "Front-end",
-            skills: [],
-            author: {
-              firstname: "mpanoratra",
-              lastname: "code",
-            },
-          }
-        ]
-
-      } catch (err) {
-        console.error(err);
-      }
-    },
-    simulateRequest() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve();
-        }, 1000);
-      });
-    },
-    handleDelete(indexDelete) {
-      this.dataCardArticle = this.dataCardArticle.filter((_, index) => index !== indexDelete
-      );
-    },
+    async fetchData() {
+        const response = await fetch('http://localhost:3000/users');
+        const jsonData = await response.json();
+        this.datas = jsonData;
+      },
   },
- 
+  mounted() {
+    this.fetchData()
+  }
   
 }
 </script>

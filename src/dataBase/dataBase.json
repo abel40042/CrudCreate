@@ -56,6 +56,29 @@
       "expDate": "",
       "age": "24",
       "id": 3
+    },
+    {
+      "firstname": "Randria",
+      "lastname": "Tsytononina ",
+      "email": "tonina@gmail.com",
+      "role": "back-end",
+      "skills": [],
+      "expTitle": "I want to registre me ",
+      "expDesc": "description",
+      "expDate": "21/03/23 17:00",
+      "age": "45",
+      "id": 4
+    },
+    {
+      "firstname": "fzfzf",
+      "lastname": "",
+      "email": "",
+      "role": "",
+      "skills": [],
+      "expTitle": "",
+      "expDesc": "",
+      "expDate": "",
+      "id": 5
     }
   ]
 }
