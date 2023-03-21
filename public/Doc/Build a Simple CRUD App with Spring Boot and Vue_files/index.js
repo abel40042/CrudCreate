@@ -1,1 +1,0 @@
-window.adroll_exp_list = ["33across", "pixel_timing", "fpidexp"];
