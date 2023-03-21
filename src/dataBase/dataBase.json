@@ -1,0 +1,23 @@
+{
+    "users":[
+        {
+        "id":0,
+        "name":"Randria",
+        "age": 22,
+        "fonction": "front-End"
+        },
+        {
+            "id":1,
+            "name":"PersoTest",
+            "age": 22,
+            "fonction": "DevOps"
+            },
+            {
+                "id":2,
+                "name":"Avatr_Local",
+                "age": 22,
+                "fonction": "back-end"
+                }
+        
+    ]
+  }
