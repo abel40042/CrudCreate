@@ -12,11 +12,11 @@
     </div>
     <div class="card__devProfil">
       <img src="../../img/Frame-2.png" alt="">
-      <h3>Role {{ jsonData.role }}</h3>
+      <h3>{{ jsonData.role }}</h3>
     </div>
     <div class="card__devProfil">
       <img src="../../img/Frame-1.png" alt="">
-      <h3>{{ jsonData.age }} Age</h3>
+      <h3>{{ jsonData.age }}</h3>
     </div>
     <div class="card__devProfil">
       <img src="../../img/Frame.png" alt="">

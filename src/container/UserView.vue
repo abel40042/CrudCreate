@@ -57,10 +57,10 @@ import CardUser from '../components/Common/Card.vue'
 
   }
    .userList{
-    width: 100%;
     background-color: rgb(221, 221, 221);
     display: flex;
     flex-direction: row;
+
    }
    h3 {
     font-weight: bolder;

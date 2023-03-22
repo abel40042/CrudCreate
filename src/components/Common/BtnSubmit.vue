@@ -22,7 +22,6 @@ export default {
 <style lang="scss" scoped>
 .btn {
   color: white;
-  background-color: #2444B5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,8 +35,5 @@ export default {
       font-size: 14px;
   }
 }
-.btn:hover{
-  background-color: #2756fe;
-  color: rgb(202, 214, 255);
-}
+
 </style>

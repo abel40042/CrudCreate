@@ -1,22 +1,59 @@
+<style lang="scss" scoped>
+   .inputBar {
+    width: 348px;
+    padding: 0;
+    text-align: left;
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+   }
+   .inputCase {
+    display: flex;
+    flex-direction: column;
+   }
+   input {
+    width: 286px;
+    height: 23px;
+    margin-block: 15px;
+    border: blue solid 1px;
+    padding: 10px;
+   }
+   .selectionSkills{
+    position: relative;
+    margin-block: 15px;
+    width: 308px;
+  }
+  .skillsInput {
+    margin: 0;
+  }
+
+   .btnPlus {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+   }
+   .btnPlusInfo {
+    float: right;
+   }
+   .submit {
+    margin: 45px 0 35px;
+   }
+</style>
 <template>
     <div class="inputBar">
         <h3>User info</h3>
         <form @submit.prevent="submitForm">
             <div class="inputCase">
-            <input id="name" type="text" placeholder="Firstname" v-model="form.firstname">
-            <input id="input" type="text" placeholder="Lastname" v-model="form.lastname">
-            <input id="input" type="email" placeholder="Email" v-model="form.email">
-            <input id="input" type="text" placeholder="Age" v-model="form.age">
-            <input id="input" type="text" placeholder="Role" v-model="form.role">
+            <input  type="text" placeholder="Firstname" v-model="form.firstname">
+            <input  type="text" placeholder="Lastname" v-model="form.lastname">
+            <input  type="email" placeholder="Email" v-model="form.email">
+            <input  type="text" placeholder="Age" v-model="form.age">
+            <input  type="text" placeholder="Role" v-model="form.role">
         <div class="selectionSkills">
             <BtnPlus class="btnPlus"/>
-            <select name="language" id="skills" placeholder="Skills" v-model="skills">
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="js">JS</option>
-                <option value="c">C</option>
-                <option value="c++">C++</option>
-            </select>   
+            <input type="text" class="skillsInput" placeholder="skills" v-model="form.skills">
         </div>
             <input id="input" type="text" placeholder="Experiences Title" v-model="form.expTitle">
             <input type="text" id="expDescr" placeholder="Experiences Description" v-model="form.expDesc">
@@ -86,70 +123,3 @@
   }
   </script>
   
-<style lang="scss" scoped>
-    #skills{
-        width: 286px;
-        height: 45px;
-        background: none;
-        border:#9A9A9A 1px solid;
-    }
-    #expDescr{
-        width: 286px;
-        height: 150px;
-        margin-block: 25px;
-        background: white;
-        color: black;
-    }
-    .inputBar{
-        color: black;
-        width: 348px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        background-color: white;
-        padding: 30px;
-        padding-top: 15px;
-        h3{
-            font-size: 20px;
-            margin: 0 0 10px;
-            font-weight: bolder;
-        }
-        .btnPlusInfo{
-            align-self: end;
-        }
-        
-
-        .selectionSkills{
-            position: relative;
-            margin-block: 25px;
-            select{
-                color: black;
-            }
-            .btnPlus{
-            color: white;
-            position: absolute;
-            z-index: 0;
-            right: 0;
-            }
-        }
-        .submit{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-block: 45px;
-        }
-    }
-    input{
-            width: 286px;
-            height: 35px;
-            margin-block: 15px;
-            border:#9A9A9A 1px solid;
-            background: none;
-            color: black;
-        }
-    #input:nth-child(1){
-        margin: 0;
-        margin-bottom: 25px;
-    }
-</style>
