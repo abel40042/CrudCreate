@@ -1,5 +1,6 @@
 <template>
   <div id="card">
+    
     <div class="card__avatarProfil" >
       <figure>  
         <img :src="image" alt="" />

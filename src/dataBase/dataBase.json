@@ -79,6 +79,17 @@
       "expDesc": "",
       "expDate": "",
       "id": 5
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "role": "",
+      "skills": [],
+      "expTitle": "",
+      "expDesc": "",
+      "expDate": "",
+      "id": 6
     }
   ]
 }

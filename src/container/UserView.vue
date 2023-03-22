@@ -1,7 +1,12 @@
 <template>
-    <div class="userList" v-for=" (item, index) in datas" :key="index">
+  <div class="showUserContainer">
+    <h3>User List</h3>
+    <div class="templateCard">
+      <div class="userList" v-for=" (item, index) in datas" :key="index">
       <CardUser :json-data="item" />
     </div>
+    </div>
+  </div>
 </template>
 <script>
 import CardUser from '../components/Common/Card.vue'
@@ -30,13 +35,35 @@ import CardUser from '../components/Common/Card.vue'
   
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss" scoped> 
+  .showUserContainer{
+    width: 100%;
+    max-width: 955px;
+    display: flex;
+    flex-direction: column;
+    h3{
+      font-size: 20px;
+      margin: 0 0 10px;
+      font-weight: bolder;
+  }
+  }
+  
+  .templateCard {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-inline: 25px ;
+    flex-wrap: wrap;
+
+  }
    .userList{
     width: 100%;
     background-color: rgb(221, 221, 221);
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
+   }
+   h3 {
+    font-weight: bolder;
+    font-size: 43px;
    }
 </style>

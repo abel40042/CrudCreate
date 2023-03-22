@@ -112,6 +112,7 @@
         h3{
             font-size: 20px;
             margin: 0 0 10px;
+            font-weight: bolder;
         }
         .btnPlusInfo{
             align-self: end;
