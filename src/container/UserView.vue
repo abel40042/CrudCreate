@@ -1,18 +1,22 @@
 <template>
-    <div class="userList" v-for="dt, id in datas" :key="id">
-      {{ dt.firstname }}
-
+    <div class="userList" v-for=" (item, index) in datas" :key="index">
+      <CardUser :json-data="item" />
     </div>
 </template>
 <script>
-// import CardUser from '../components/Common/Card.vue'
+import CardUser from '../components/Common/Card.vue'
   export default {
   name: "UserView",
   data() {
     return {
-      datas: []
+      datas: [],
+
     };
   },
+  components:{
+    CardUser,
+  },
+
   methods: {
     async fetchData() {
         const response = await fetch('http://localhost:3000/users');

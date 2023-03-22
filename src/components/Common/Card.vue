@@ -1,35 +1,40 @@
 <template>
   <div id="card">
-    <div class="card__avatarProfil">
+    <div class="card__avatarProfil" >
       <figure>  
-        <!-- <img :src= {{ image }} alt="" /> -->
+        <img :src="image" alt="" />
       </figure>
      <div class="nameSemail">
-      <h3>{{firstName}} {{lastname}}</h3>
-      <h3 class="emailTextContaint">nameTest@test.com {{ email }}</h3>
+      <h3>{{jsonData.firstname}} {{jsonData.lastname}}</h3>
+      <h3 class="emailTextContaint">{{ jsonData.email }}</h3>
      </div>
     </div>
     <div class="card__devProfil">
       <img src="../../img/Frame-2.png" alt="">
-      <h3>Role {{ role }}</h3>
+      <h3>Role {{ jsonData.role }}</h3>
     </div>
     <div class="card__devProfil">
       <img src="../../img/Frame-1.png" alt="">
-      <h3>{{ age }} Age</h3>
+      <h3>{{ jsonData.age }} Age</h3>
     </div>
     <div class="card__devProfil">
       <img src="../../img/Frame.png" alt="">
-      <h3>Skills {{ publishAt }}</h3>
     </div>
   
   </div>
 </template>
 
 <script>
+
 export default {
   name: "CardUser",
+  props: {
+    jsonData:{
+      type: Object,
+      required: true
+    }
+  },
 
-  
 }
 </script>
 

@@ -54,7 +54,7 @@
       "expTitle": "",
       "expDesc": "",
       "expDate": "",
-      "age": "24",
+      "age": 24,
       "id": 3
     },
     {
@@ -66,7 +66,7 @@
       "expTitle": "I want to registre me ",
       "expDesc": "description",
       "expDate": "21/03/23 17:00",
-      "age": "45",
+      "age": 45,
       "id": 4
     },
     {
