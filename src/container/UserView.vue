@@ -38,7 +38,7 @@ import CardUser from '../components/Common/Card.vue'
 <style lang="scss" scoped> 
   .showUserContainer{
     width: 100%;
-    max-width: 955px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     h3{
