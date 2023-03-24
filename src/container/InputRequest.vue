@@ -116,6 +116,8 @@
     h3 {
       font-size: 20px;
       font-weight: 600;
+      margin: 0;
+      margin-inline-start: 20px;
     }
    }
    .inputCase {
