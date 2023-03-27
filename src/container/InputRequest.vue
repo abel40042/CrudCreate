@@ -28,7 +28,7 @@
       </div>
           <input id="input" type="text" placeholder="Experiences Title" v-model="form.expTitle">
           <input type="text" id="expDescr" placeholder="Experiences Description" v-model="form.expDesc">
-          <input id="input" type="text" placeholder="Experiences Date" v-model="form.expDate">
+          <input id="input" type="text" pslicelaceholder="Experiences Date" v-model="form.expDate">
       </div>
       <div class="plusBtnInfo">
         <BtnPlus class="btnPlusInfo"/>
@@ -80,25 +80,33 @@
         const jsonData = await response.json();
         this.data = jsonData;
       },
+      
       async postData(data) {
         const postResponse = await fetch('http://localhost:3000/users',{
             method: 'POST',
             headers: {
+
                 "Content-Type": "application/json"
             },
             body: data
         })
         console.log(postResponse)
+        
+        
       },
       addSkillsValue() {
         const nouvelId = Date.now().toString()
         this.listeElement.push({ id: nouvelId, valeur: this.nouvelleValeur })
+        this.form.skills.push(this.nouvelleValeur);
         this.nouvelleValeur = "";
       },
+
       supprimerElement(idElement) {
       const indexElement = this.listeElement.findIndex(element => element.id === idElement)
       this.listeElement.splice(indexElement, 1)
-    }
+    },
+
+    
 
       
     },
@@ -114,7 +122,7 @@
     padding: 0;
     text-align: left;
     h3 {
-      font-size: 20px;
+      font-size: 20px;              
       font-weight: 600;
       margin: 0;
       margin-inline-start: 20px;

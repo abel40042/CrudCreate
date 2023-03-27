@@ -28,6 +28,8 @@ import CardUser from '../components/Common/Card.vue'
         const jsonData = await response.json();
         this.datas = jsonData;
       },
+
+
   },
   mounted() {
     this.fetchData()

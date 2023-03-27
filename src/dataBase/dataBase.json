@@ -1,105 +1,43 @@
 {
   "users": [
     {
-      "id": 0,
-      "firstname": "Randria",
-      "lastname": "fanampiny",
-      "email": "test@test.test",
-      "age": 22,
-      "role": "back-end",
-      "skills": [
-        "html",
-        "js"
-      ],
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "role": "",
+      "skills": [],
       "expTitle": "",
       "expDesc": "",
-      "expDate": ""
-    },
-    {
-      "id": 1,
-      "firstname": "Randria",
-      "lastname": "fanampiny",
-      "email": "test@test.test",
-      "age": 22,
-      "role": "back-end",
-      "skills": [
-        "html",
-        "js"
-      ],
-      "expTitle": "",
-      "expDesc": "",
-      "expDate": ""
-    },
-    {
-      "id": 2,
-      "firstname": "Randria",
-      "lastname": "fanampiny",
-      "email": "test@test.test",
-      "age": 22,
-      "role": "back-end",
-      "skills": [
-        "html",
-        "js"
-      ],
-      "expTitle": "",
-      "expDesc": "",
-      "expDate": ""
+      "expDate": "",
+      "id": 1
     },
     {
       "firstname": "",
       "lastname": "",
       "email": "",
       "role": "",
-      "skills": [],
+      "skills": [
+        "css"
+      ],
+      "expTitle": "",
+      "expDesc": "",
+      "expDate": "",
+      "id": 2
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "role": "",
+      "skills": [
+        "css",
+        "HTML",
+        "C++"
+      ],
       "expTitle": "",
       "expDesc": "",
       "expDate": "",
       "id": 3
-    },
-    {
-      "firstname": "adadadadadad",
-      "lastname": "adadadadadad",
-      "email": "adadada@adada",
-      "role": "fafafafafaf",
-      "expTitle": "dada",
-      "expDesc": "zdzdzdzdz",
-      "expDate": "dzdzdzd",
-      "age": "aafafafa",
-      "id": 4
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "role": "",
-      "skills": [],
-      "expTitle": "",
-      "expDesc": "",
-      "expDate": "",
-      "id": 5
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "role": "",
-      "skills": [],
-      "expTitle": "",
-      "expDesc": "",
-      "expDate": "",
-      "id": 6
-    },
-    {
-      "firstname": "name ",
-      "lastname": "lsname",
-      "email": "mailtset@test.com",
-      "role": "devOps",
-      "skills": [],
-      "expTitle": "expTitle",
-      "expDesc": "expdesc",
-      "expDate": "2121",
-      "age": "21",
-      "id": 7
     }
   ]
 }

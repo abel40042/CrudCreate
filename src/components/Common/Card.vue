@@ -20,6 +20,7 @@
     </div>
     <div class="card__devProfil">
       <img src="../../img/Frame.png" alt="">
+      <h3>{{ jsonData.skills }}</h3>
     </div>
   
   </div>
