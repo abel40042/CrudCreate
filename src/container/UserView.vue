@@ -58,6 +58,7 @@ export default {
     gap: 15px;
     padding-inline: 25px ;
     flex-wrap: wrap;
+    justify-content: center;
 
   }
    .userList{

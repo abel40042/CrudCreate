@@ -1,29 +1,35 @@
 {
   "users": [
     {
+      "firstname": "Anarana ",
+      "lastname": "Fanampiny",
+      "email": "email@test.com",
+      "role": "Developer",
+      "skills": [
+        "HTML",
+        "Angular"
+      ],
+      "expTitle": "lorem lavalavallavalaalavaa",
+      "expDesc": "lorem lavalavallavalaalavaa mbola miampy",
+      "expDate": [
+        "21/03/23 17:00",
+        "21/03/23 17:00"
+      ],
+      "age": "55",
+      "id": 1
+    },
+    {
       "firstname": "",
       "lastname": "",
       "email": "",
       "role": "",
-      "skills": [],
-      "expTitle": "",
-      "expDesc": "",
-      "expDate": "",
-      "id": 1
-    },
-    {
-      "firstname": "NAme ",
-      "lastname": "lastName",
-      "email": "namepluslsname@gmail.com",
-      "role": "back-end",
       "skills": [
         "css",
-        "phP"
+        "html"
       ],
       "expTitle": "",
       "expDesc": "",
       "expDate": [],
-      "age": "55",
       "id": 2
     }
   ]

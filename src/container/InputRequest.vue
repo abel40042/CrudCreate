@@ -33,9 +33,9 @@
             <span v-for="elem in listExpDate" :key="elem.id">
             <div class="expDateCont">
               <div class="expDate">
-                <p>{{ elem.valeur }} <br><strong>SAHA Technology</strong></p>
+                <p>{{ elem.valeur }} <br> <strong> SAHA Technology</strong> </p>
               </div>
-              <div class="delete">
+              <div class="delete" >
                 <img src="../img/delete.png" alt="" @click="supprimElemDate(elem.id)">
               </div>
             </div>
@@ -124,7 +124,7 @@
         const newDates = Date.now().toString()
         this.listExpDate.push({ id: newDates, valeur: this.newExpDate })
         this.form.expDate.push(this.newExpDate);
-        this.newExpDate = "";
+        this.newExpDate = " ";
       },
       supprimElemDate(idElem) {
         const indexElem = this.listExpDate.findIndex(elem => elem.id === idElem)
@@ -148,6 +148,9 @@
       font-weight: 600;
       margin: 0;
       margin-inline-start: 20px;
+    }
+    strong {
+      font-size: 14px;
     }
    }
    .inputCase {
@@ -221,5 +224,19 @@
    }
    .delete {
     margin-inline-start: 15px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
+
+  .expDateCont {
+    display: flex;
+    flex-direction: row;
+    width: 296px;
+    height: 73px;
+    background-color: #DDE3EB;
+    padding: 5px 15px 0;
+    margin: 5px 0 5px;
+    position: relative;
+  }
 </style>  

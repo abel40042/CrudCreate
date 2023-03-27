@@ -46,7 +46,6 @@ export default {
     handleClick() {
       emitter.emit('user-clicked', this.jsonData);
       console.log(this.jsonData)
-
     },
 },
 };
@@ -69,6 +68,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 45px;
   figure{
     margin: 0;
 
@@ -85,10 +85,14 @@ export default {
   display: flex;
   flex-direction: column;
   padding-inline: 20px;
+  text-align: left;
+  justify-content: space-between;
+  height: 45px;
   h3{
     font-weight: normal;
     font-size: 14px;
     margin-left: 0;
+    margin: 0;
   } 
   .emailTextContaint{
     font-size: 14px;
