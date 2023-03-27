@@ -31,45 +31,48 @@
         <img src="../img/ligneGris.png">
         <div class="ligneVerticale"></div>
       </div>
-      <div class="textExp">
-        <h3>{{ selectedUser.expDate }}</h3>
+      <div class="textExp" v-for="(daty,index) in selectedUser.expDate" :key="index">
+        <h3>{{ daty }}</h3>
+        
+        <h3>{{ selectedUser.expTitle }}</h3>
+
+        <h3>{{ selectedUser.expDesc }}</h3>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+import { emitter } from '../main';
+
+export default {
+  name: "InfoUpdate",
+  data() {
+    return {
+      selectedUser: null,
+    };
+  },
+  methods: {
+    closedrawer() {
+      const element = document.getElementById('infoUpdate')
+      element.remove()
+    }
+  },
+  mounted() {
+  // Ajoutez un écouteur d'événements avec la nouvelle API
+  emitter.on("user-clicked", (userData) => {
+    this.selectedUser = userData;
+  });
+},
+beforeUnmount() {
+  // Supprimez l'écouteur d'événements avant la destruction du composant
+  emitter.off("user-clicked", null, this);
+},
+};
+</script>
+
+
 <style lang="scss" scoped>
-  // MOVE AFTER
-  .exp {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    .ligne {
-      display: flex;
-      margin-left: 12px;
-      gap: 5px;
-      flex-direction: column;
-      justify-content: center;
-      background-color: red;
-      .ligneVerticale {
-      width: 1px;
-      height: 117px;
-      background-color: #9A9A9A;
-      margin: auto;
-    }
-    }
-    .textExp {
-      margin-left: 13px;
-      display: flex;
-      flex-direction: column;
-    }
-    
-  }
-
-
-
-
-
   #infoUpdate{
     width: 591px;
     height: 100%;
@@ -140,34 +143,37 @@
     margin-inline:5px ;
   }
 }
+  // MOVE AFTER
+  .exp {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    h3 {
+      font-weight: lighter;
+      color: black;
+      font-size: 14px;
+    }
+    .ligne {
+      display: flex;
+      margin-left: 12px;
+      gap: 5px;
+      flex-direction: column;
+      justify-content: center;
+      .ligneVerticale {
+      width: 1px;
+      height: 117px;
+      background-color: #9A9A9A;
+      margin: auto;
+    }
+    }
+    .textExp {
+      margin-left: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+    
+  }
 </style>
 
-<script>
-import { emitter } from '../main';
-
-export default {
-  name: "InfoUpdate",
-  data() {
-    return {
-      selectedUser: null,
-
-    };
-  },
-  methods: {
-    closedrawer() {
-      const element = document.getElementById('infoUpdate')
-      element.remove()
-    }
-  },
-  mounted() {
-  // Ajoutez un écouteur d'événements avec la nouvelle API
-  emitter.on("user-clicked", (userData) => {
-    this.selectedUser = userData;
-  });
-},
-beforeUnmount() {
-  // Supprimez l'écouteur d'événements avant la destruction du composant
-  emitter.off("user-clicked", null, this);
-},
-};
-</script>

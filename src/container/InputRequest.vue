@@ -33,7 +33,7 @@
             <span v-for="elem in listExpDate" :key="elem.id">
             <div class="expDateCont">
               <div class="expDate">
-                <p>{{ elem.valeur }} <br> <strong> SAHA Technology</strong> </p>
+                <p>{{ elem.valeur }} </p>
               </div>
               <div class="delete" >
                 <img src="../img/delete.png" alt="" @click="supprimElemDate(elem.id)">
