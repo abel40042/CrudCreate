@@ -2,6 +2,7 @@
   <div id="app">
     <InputRequest/>
     <UserView/>
+    
 </div>
 </template>
 
@@ -9,6 +10,7 @@
 import jsonData from './dataBase/dataBase.json'
 import InputRequest from './container/InputRequest.vue';
 import UserView from './container/UserView.vue';
+
 export default {
   name: 'App',
   components: {
@@ -17,10 +19,9 @@ export default {
 },
 data() {
     return {
-      data: jsonData
+      data: jsonData,
     };
   },
-  
 }
 </script>
 

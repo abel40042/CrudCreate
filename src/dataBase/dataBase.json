@@ -12,32 +12,19 @@
       "id": 1
     },
     {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "role": "",
-      "skills": [
-        "css"
-      ],
-      "expTitle": "",
-      "expDesc": "",
-      "expDate": "",
-      "id": 2
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "role": "",
+      "firstname": "NAme ",
+      "lastname": "lastName",
+      "email": "namepluslsname@gmail.com",
+      "role": "back-end",
       "skills": [
         "css",
-        "HTML",
-        "C++"
+        "phP"
       ],
       "expTitle": "",
       "expDesc": "",
-      "expDate": "",
-      "id": 3
+      "expDate": [],
+      "age": "55",
+      "id": 2
     }
   ]
 }

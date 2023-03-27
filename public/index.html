@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -16,5 +17,11 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    
+<script>
+  var j = jQuery.noConflict();
+  // Maintenant, vous pouvez utiliser la variable j au lieu de $ pour accéder à jQuery
+</script>
+
   </body>
 </html>

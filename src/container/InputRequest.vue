@@ -28,10 +28,22 @@
       </div>
           <input id="input" type="text" placeholder="Experiences Title" v-model="form.expTitle">
           <input type="text" id="expDescr" placeholder="Experiences Description" v-model="form.expDesc">
-          <input id="input" type="text" pslicelaceholder="Experiences Date" v-model="form.expDate">
+          <div class="expDateAdd">
+            <input id="input" type="text" placeholder="Experiences Date" v-model="newExpDate">
+            <span v-for="elem in listExpDate" :key="elem.id">
+            <div class="expDateCont">
+              <div class="expDate">
+                <p>{{ elem.valeur }} <br><strong>SAHA Technology</strong></p>
+              </div>
+              <div class="delete">
+                <img src="../img/delete.png" alt="" @click="supprimElemDate(elem.id)">
+              </div>
+            </div>
+            </span>
+          </div>
       </div>
       <div class="plusBtnInfo">
-        <BtnPlus class="btnPlusInfo"/>
+        <BtnPlus class="btnPlusInfo" @click="addExpDates"/>
       </div>
       <div class="submit">
           <BtnSubmit textContaintSubmit="Add user info"/>
@@ -62,11 +74,13 @@
           skills: [],
           expTitle: '',
           expDesc: '',
-          expDate: '',
+          expDate: [],
         },
         data: jsonData,
         nouvelleValeur: "",
         listeElement: [],
+        newExpDate: "",
+        listExpDate: [],
       }
     },
     methods: {
@@ -106,8 +120,16 @@
       this.listeElement.splice(indexElement, 1)
     },
 
-    
-
+    addExpDates() {
+        const newDates = Date.now().toString()
+        this.listExpDate.push({ id: newDates, valeur: this.newExpDate })
+        this.form.expDate.push(this.newExpDate);
+        this.newExpDate = "";
+      },
+      supprimElemDate(idElem) {
+        const indexElem = this.listExpDate.findIndex(elem => elem.id === idElem)
+        this.listExpDate.splice(indexElem, 1)
+      }
       
     },
     mounted() {

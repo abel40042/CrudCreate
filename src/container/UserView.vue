@@ -1,42 +1,44 @@
 <template>
   <div class="showUserContainer">
     <h3>User List</h3>
+    
     <div class="templateCard">
-      <div class="userList" v-for=" (item, index) in datas" :key="index">
-      <CardUser :json-data="item" />
-    </div>
+      <div class="userList" v-for="(item, index) in datas" :key="index">
+        <CardUser :json-data="item"/>
+      </div>
+         
     </div>
   </div>
+  <InfoUpdate/> 
 </template>
+
 <script>
 import CardUser from '../components/Common/Card.vue'
-  export default {
+import InfoUpdate from './InfoUpdate.vue';
+export default {
   name: "UserView",
   data() {
     return {
       datas: [],
-
     };
   },
   components:{
     CardUser,
+    InfoUpdate,
   },
-
   methods: {
     async fetchData() {
-        const response = await fetch('http://localhost:3000/users');
-        const jsonData = await response.json();
-        this.datas = jsonData;
-      },
-
-
+      const response = await fetch('http://localhost:3000/users');
+      const jsonData = await response.json();
+      this.datas = jsonData;
+    },
   },
   mounted() {
     this.fetchData()
   }
-  
 }
 </script>
+
 <style lang="scss" scoped> 
   .showUserContainer{
     width: 100%;

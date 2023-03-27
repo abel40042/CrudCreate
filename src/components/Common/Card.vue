@@ -1,9 +1,9 @@
 <template>
-  <div id="card">
+  <div id="card" @click="handleClick">
     
     <div class="card__avatarProfil" >
       <figure>  
-        <img :src="image" alt="" />
+        <img :src="image" alt=""/>
       </figure>
      <div class="nameSemail">
       <h3>{{jsonData.firstname}} {{jsonData.lastname}}</h3>
@@ -18,15 +18,19 @@
       <img src="../../img/Frame-1.png" alt="">
       <h3>{{ jsonData.age }}</h3>
     </div>
-    <div class="card__devProfil">
+    <div class="card__devProfil" >
       <img src="../../img/Frame.png" alt="">
-      <h3>{{ jsonData.skills }}</h3>
+      <div v-for="(list,index) in jsonData.skills" :key="index">
+        <span><h3>{{ list }}</h3></span>
+      </div>
+      
     </div>
   
   </div>
 </template>
 
 <script>
+import {emitter} from '@/main';
 
 export default {
   name: "CardUser",
@@ -34,10 +38,18 @@ export default {
     jsonData:{
       type: Object,
       required: true
-    }
+    },
+    
   },
 
-}
+  methods: {
+    handleClick() {
+      emitter.emit('user-clicked', this.jsonData);
+      console.log(this.jsonData)
+
+    },
+},
+};
 </script>
 
 <style lang="scss" scoped>
